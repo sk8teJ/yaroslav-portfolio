@@ -4,11 +4,11 @@
 
 ## Проекты в портфолио
 
-- **AI Knowledge Assistant** — RAG-поиск по PDF, DOCX и TXT, Gemini Embeddings, ChromaDB, управление документами и базовые проверки качества retrieval и генерации.
-- **AI Request Manager** — автоматизация обработки обращений через n8n и Telegram; классификация с помощью DeepSeek через OpenRouter.
-- **Business Process Analytics** — учебный проект аналитики бизнес-процессов на синтетических данных с PostgreSQL, Pandas, Streamlit и Plotly.
+- **AI Knowledge Assistant** — учебное RAG-приложение для PDF, DOCX и TXT: Gemini Embeddings, ChromaDB, поиск контекста, ответы с источниками, управление документами и автоматизированные базовые проверки retrieval и генерации.
+- **AI Request Manager** — учебный workflow на n8n для обработки обращений из Telegram с помощью Google Gemini: классификация, приоритизация, определение тональности и подразделения, сохранение результатов в n8n Data Tables, уведомления, обработка ошибок и отдельный аналитический workflow.
+- **Business Process Analytics** — учебный проект аналитики интернет-магазина на синтетических данных: PostgreSQL, SQL, Pandas, Streamlit, Plotly, сценарный ROI-калькулятор и запуск через Docker Compose.
 
-## Требования
+## Автоматическая проверка\n\nGitHub Actions запускает production-сборку Vite при каждом push и pull request в `main`. Проверка выполняется на Node.js 20.19 и 22.12.\n\n## Требования
 
 - Node.js 20.19+ или 22.12+
 - npm
