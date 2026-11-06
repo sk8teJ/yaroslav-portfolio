@@ -116,6 +116,9 @@ function App() {
 
   useEffect(() => {
     document.documentElement.lang = language;
+    document.title = language === 'ru'
+      ? 'Ярослав Прокошкин — Junior Prompt Engineer / AI Automation Specialist'
+      : 'Yaroslav Prokoshkin — Junior Prompt Engineer / AI Automation Specialist';
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
