@@ -1,33 +1,37 @@
-# Ярослав Прокошкин — Junior Prompt Engineer / AI Automation Specialist
+<div align="center">
+  <img src="assets/github-profile-banner.svg" alt="Yaroslav Prokoshkin — AI, automation and business analytics" width="100%">
+  <p><strong>AI · Automation · Business Analytics</strong></p>
+  <p>Одностраничное портфолио на React + Vite с адаптивной вёрсткой, анимациями и переключением RU/EN.</p>
+  <p><a href="https://yaroslav-portfolio.yaroslav-prokoshkin2134.workers.dev/">Открыть сайт</a> · <a href="https://github.com/sk8teJ">GitHub</a></p>
+  <img alt="CI" src="https://github.com/sk8teJ/yaroslav-portfolio/actions/workflows/ci.yml/badge.svg?branch=main">
+</div>
 
-Одностраничное портфолио на React + Vite. Тёмная минималистичная визуальная концепция, адаптивная вёрстка, анимации появления секций и переключение русского/английского языков.
+---
 
-## Проекты в портфолио
+## Проекты
 
-- **AI Knowledge Assistant** — учебное RAG-приложение для PDF, DOCX и TXT: Gemini Embeddings, ChromaDB, поиск контекста, ответы с источниками, управление документами и автоматизированные базовые проверки retrieval и генерации.
-- **AI Request Manager** — учебный workflow на n8n для обработки обращений из Telegram с помощью Google Gemini: классификация, приоритизация, определение тональности и подразделения, сохранение результатов в n8n Data Tables, уведомления, обработка ошибок и отдельный аналитический workflow.
-- **Business Process Analytics** — учебный проект аналитики интернет-магазина на синтетических данных: PostgreSQL, SQL, Pandas, Streamlit, Plotly, сценарный ROI-калькулятор и запуск через Docker Compose.
+| Проект | Описание | Технологии |
+|---|---|---|
+| [AI Knowledge Assistant](https://github.com/sk8teJ/ai-knowledge-assistant) | Учебное RAG-приложение: поиск по PDF, DOCX и TXT, ответы с источниками, управление документами | Python · Streamlit · Gemini · ChromaDB |
+| [AI Request Manager](https://github.com/sk8teJ/ai-request-manager) | Автоматизация обработки обращений из Telegram: классификация, приоритизация, маршрутизация и аналитика | n8n · Google Gemini · Telegram |
+| [Business Process Analytics](https://github.com/sk8teJ/business-process-analytics) | Анализ операций интернет-магазина, SQL-метрики, дашборд и сценарный ROI-калькулятор на синтетических данных | PostgreSQL · SQL · Pandas · Streamlit · Plotly |
 
-## Автоматическая проверка\n\nGitHub Actions запускает production-сборку Vite при каждом push и pull request в `main`. Проверка выполняется на Node.js 20.19 и 22.12.\n\n## Требования
+## Автоматическая проверка
 
-- Node.js 20.19+ или 22.12+
-- npm
+GitHub Actions запускает production-сборку Vite при каждом push и pull request в `main`. Проверка выполняется на Node.js 20.19 и 22.12.
 
-## Запуск в Windows PowerShell
+## Запуск локально
 
-Перейдите в папку проекта:
+Требования: Node.js 20.19+ или 22.12+, npm.
 
-```powershell
-cd путь\к\yaroslav-portfolio
+```bash
 npm install
 npm run dev
 ```
 
-Откройте локальный адрес, который Vite покажет в терминале (обычно `http://localhost:5173`).
+## Production-сборка
 
-## Проверка production-сборки
-
-```powershell
+```bash
 npm run build
 npm run preview
 ```
@@ -39,4 +43,4 @@ npm run preview
 - `src/main.jsx` — точка входа React.
 - `index.html` — метаданные страницы.
 
-Показатели и результаты, если они упоминаются в описаниях проектов, относятся только к фактически выполненным учебным проверкам. Business Process Analytics использует синтетические данные и не является коммерческим внедрением.
+Проекты в портфолио являются учебными и самостоятельными. Описания и результаты отражают фактически реализованный функционал; Business Process Analytics использует синтетические данные.
