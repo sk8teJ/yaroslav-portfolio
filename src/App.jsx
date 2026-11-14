@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react';
 const content = {
   ru: {
     nav: ['Проекты', 'Навыки', 'Обо мне', 'Хакатоны', 'Контакты'],
-    availability: 'Открыт к junior-позициям и стажировкам',
     role: 'Junior Prompt Engineer',
     roleAccent: 'AI Automation Specialist.',
     intro: 'Изучаю большие языковые модели и создаю прикладные AI-решения: от разработки промптов и поиска по документам до автоматизации рабочих процессов.',
@@ -53,7 +52,6 @@ const content = {
   },
   en: {
     nav: ['Projects', 'Skills', 'About', 'Hackathons', 'Contact'],
-    availability: 'Open to junior roles and internships',
     role: 'Junior Prompt Engineer',
     roleAccent: 'AI Automation Specialist.',
     intro: 'Exploring large language models and building practical AI solutions — from prompt design and document search to workflow automation.',
@@ -155,7 +153,6 @@ function App() {
             ))}
           </div>
           <div className="nav-actions">
-            <span className="availability"><i />{t.availability}</span>
             <button className="lang-switch" type="button" onClick={toggleLanguage}>{language === 'ru' ? 'EN' : 'RU'}</button>
             <button className="menu-toggle" type="button" onClick={() => setMenuOpen((open) => !open)} aria-label={menuOpen ? 'Close menu' : 'Open menu'} aria-expanded={menuOpen}>
               <span /><span />
