@@ -130,10 +130,9 @@ a:hover .arrow { transform: translate(3px, -2px); }
 .contact .eyebrow, .contact .section-count { color: #aaa99e; }
 .contact .section-top { border-color: rgba(246,245,239,.2); }
 .contact .eyebrow:before { background: #c28b70; }
-.contact-layout { display: grid; grid-template-columns: 1.1fr .9fr; gap: 10%; align-items: end; padding: 60px 0 70px; }
-.contact-layout h2 { max-width: 750px; margin: 0; font-family: var(--serif); font-size: clamp(56px, 8vw, 110px); font-weight: 400; letter-spacing: -.065em; line-height: .95; }
-.contact-layout p { max-width: 330px; color: #c2c0b6; font-size: 12px; line-height: 1.8; }
-.contact-email { display: inline-flex; align-items: center; gap: 12px; margin-top: 20px; padding-bottom: 9px; border-bottom: 1px solid #b77c61; font-size: 12px; }
+.contact-layout { display: flex; flex-direction: column; align-items: center; gap: 28px; padding: 60px 0 70px; text-align: center; }
+.contact-layout h2 { max-width: 100%; margin: 0; font-family: var(--serif); font-size: clamp(56px, 8vw, 110px); font-weight: 400; letter-spacing: -.065em; line-height: .95; text-align: center; }
+.contact-email { display: inline-flex; align-items: center; gap: 12px; margin-top: 0; padding-bottom: 9px; border-bottom: 1px solid #b77c61; font-size: 14px; }
 .contact-links { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid rgba(246,245,239,.2); border-bottom: 1px solid rgba(246,245,239,.2); }
 .contact-links a { position: relative; display: flex; flex-direction: column; gap: 13px; min-height: 115px; padding: 22px 20px 20px 0; }
 .contact-links a+a { padding-left: 22px; border-left: 1px solid rgba(246,245,239,.2); }
