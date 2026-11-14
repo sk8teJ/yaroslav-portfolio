@@ -110,9 +110,12 @@ function Arrow() {
 }
 
 const projectImages = [
-  'https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1400&q=85',
-  'https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1400&q=85',
-  'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1400&q=85',
+  // Knowledge Assistant — research materials and a calm, document-focused workspace.
+  'https://ponder.ing/_next/image?q=75&url=https%3A%2F%2Fd3n7w3548u188s.cloudfront.net%2Fblog%2F5ec1d016-37b0-47b4-bdd7-bf4ee24d63bf&w=1200',
+  // AI Request Manager — a real-world process being mapped and structured.
+  'https://images.squarespace-cdn.com/content/v1/5f2aa0eedb70c4714281636b/b5c4b3df-13ff-471b-9da8-2d33e4e5d549/header1.png',
+  // Business Process Analytics — a warm, neutral analytics dashboard.
+  'https://cdn.prod.website-files.com/63ba90c2fb087e5f140fe0eb/686752a07d7a4ecc43b7fe9e_68671cf2ea0b46f911c2fb3a-1751600009142.jpeg',
 ];
 
 function App() {
