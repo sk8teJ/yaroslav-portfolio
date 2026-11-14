@@ -109,6 +109,12 @@ function Arrow() {
   return <span className="arrow" aria-hidden="true">↗</span>;
 }
 
+const projectImages = [
+  'https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1400&q=85',
+  'https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1400&q=85',
+  'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1400&q=85',
+];
+
 function App() {
   const [language, setLanguage] = useState('ru');
   const [menuOpen, setMenuOpen] = useState(false);
@@ -117,8 +123,8 @@ function App() {
   useEffect(() => {
     document.documentElement.lang = language;
     document.title = language === 'ru'
-      ? 'Ярослав Прокошкин — Junior Prompt Engineer / AI Automation Specialist'
-      : 'Yaroslav Prokoshkin — Junior Prompt Engineer / AI Automation Specialist';
+      ? 'Ярослав Прокошкин — AI, automation & analytics'
+      : 'Yaroslav Prokoshkin — AI, automation & analytics';
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -139,18 +145,19 @@ function App() {
 
   return (
     <div className="site-shell" id="top">
-      <header className="nav-shell">
-        <nav className="nav" aria-label="Main navigation">
-          <a className="brand" href="#top" onClick={closeMenu}>Yaroslav<span>.</span></a>
-          <div className={`nav-links ${menuOpen ? 'open' : ''}`}>
+      <header className="site-header">
+        <nav className="nav container" aria-label="Main navigation">
+          <a className="brand" href="#top" onClick={closeMenu}>YAROSLAV<span>.</span></a>
+          <div className={\`nav-links \${menuOpen ? 'open' : ''}\`}>
             {['work', 'capabilities', 'about', 'hackathons', 'contact'].map((id, i) => (
-              <a key={id} href={`#${id}`} onClick={closeMenu}>{t.nav[i]}</a>
+              <a key={id} href={\`#\${id}\`} onClick={closeMenu}>{t.nav[i]}</a>
             ))}
           </div>
           <div className="nav-actions">
-            <button className="lang-switch" type="button" onClick={toggleLanguage} aria-label={language === 'ru' ? 'Switch to English' : 'Переключить на русский'}>{language === 'ru' ? 'EN' : 'RU'}</button>
+            <span className="availability"><i />{t.availability}</span>
+            <button className="lang-switch" type="button" onClick={toggleLanguage}>{language === 'ru' ? 'EN' : 'RU'}</button>
             <button className="menu-toggle" type="button" onClick={() => setMenuOpen((open) => !open)} aria-label={menuOpen ? 'Close menu' : 'Open menu'} aria-expanded={menuOpen}>
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 5h12M2 11h12" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" /></svg>
+              <span /><span />
             </button>
           </div>
         </nav>
@@ -158,96 +165,116 @@ function App() {
 
       <main>
         <section className="hero">
-          <div className="container hero-grid">
+          <div className="container hero-layout">
             <div className="hero-copy">
-              <div className="availability reveal"><i /><span>{t.availability}</span></div>
-              <h1 className="reveal delay-1">{t.role}<span className="line-two">{t.roleAccent}</span></h1>
+              <div className="eyebrow reveal">{language === 'ru' ? 'НЕЗАВИСИМАЯ ПРАКТИКА · AI И ТЕХНОЛОГИИ' : 'INDEPENDENT PRACTICE · AI & TECHNOLOGY'}</div>
+              <h1 className="reveal delay-1">{language === 'ru' ? <>Ярослав<br /><em>Прокошкин.</em></> : <>Yaroslav<br /><em>Prokoshkin.</em></>}</h1>
+              <p className="hero-role reveal delay-2">{t.role} <span>/</span> {t.roleAccent}</p>
               <p className="hero-description reveal delay-2">{t.intro}</p>
-              <div className="hero-actions reveal delay-2">
-                <a className="button-primary" href="#work">{language === 'ru' ? 'Смотреть проекты' : 'Explore projects'} <Arrow /></a>
-                <a className="button-secondary" href="#about">{language === 'ru' ? 'Обо мне' : 'About me'} <Arrow /></a>
+              <div className="hero-actions reveal delay-3">
+                <a className="text-link" href="#work">{language === 'ru' ? 'Изучить проекты' : 'Explore selected work'} <Arrow /></a>
+                <a className="text-link muted-link" href="#contact">{language === 'ru' ? 'Связаться' : 'Get in touch'} <Arrow /></a>
               </div>
+              <div className="hero-index reveal delay-3"><span>01 — 08</span><span>{language === 'ru' ? 'ПОРТФОЛИО · 2026' : 'PORTFOLIO · 2026'}</span></div>
             </div>
-            <div className="hero-art reveal delay-2" aria-label="Abstract AI and automation illustration">
-              <div className="orbit" />
-              <div className="glass-panel">
-                <div className="panel-top"><span>Prompt / Workflow / Result</span><span className="panel-dots"><i /><i /><i /></span></div>
-                <div className="panel-title">{language === 'ru' ? 'От запроса — к решению.' : 'From prompt to outcome.'}</div>
-                <div className="metric-row">
-                  <div className="metric"><small>LLM</small><strong>AI<span>.</span></strong><em>Context & prompts</em></div>
-                  <div className="metric"><small>Automation</small><strong>01</strong><em>Workflow</em></div>
-                </div>
-                <div className="chart"><svg viewBox="0 0 330 105" preserveAspectRatio="none" aria-hidden="true"><path d="M0 82 C25 75 31 84 52 66 S82 62 102 68 S129 37 151 49 S177 60 197 36 S225 43 245 27 S278 32 300 10 L330 15" fill="none" stroke="#a9c5f5" strokeWidth="2" /></svg></div>
-              </div>
-              <div className="float-tag one">LLM · RAG · API</div>
-              <div className="float-tag two">Think clearly. Build simply.</div>
+            <div className="hero-visual reveal delay-2">
+              <div className="hero-photo" role="img" aria-label={language === 'ru' ? 'Архитектурная фотография в тёплых естественных оттенках' : 'Architectural photograph in warm natural tones'} />
+              <div className="photo-caption"><span>FIG. 01</span><span>{language === 'ru' ? 'Исследование формы и функции' : 'A study in form and function'}</span></div>
+              <div className="vertical-note">{language === 'ru' ? 'ДУМАТЬ · СОЗДАВАТЬ · ПРОВЕРЯТЬ' : 'THINK · BUILD · VALIDATE'}</div>
             </div>
           </div>
-          <div className="scroll-note">{language === 'ru' ? 'Листайте вниз' : 'Scroll to explore'}</div>
+          <div className="hero-bottom container"><span>{language === 'ru' ? 'НИЖНИЙ НОВГОРОД / РОССИЯ' : 'NIZHNY NOVGOROD / RUSSIA'}</span><a href="#work">{language === 'ru' ? 'ПРОКРУТИТЕ, ЧТОБЫ ИССЛЕДОВАТЬ' : 'SCROLL TO EXPLORE'} ↓</a></div>
         </section>
 
-        <section className="trust-strip"><div className="container trust-inner"><span>Prompt engineering</span><span>Applied AI</span><span>RAG & vector search</span><span>Workflow automation</span></div></section>
+        <section className="intro-band">
+          <div className="container intro-band-inner reveal">
+            <span className="eyebrow">{language === 'ru' ? 'ПОДХОД' : 'APPROACH'}</span>
+            <p>{language === 'ru'
+              ? <>Соединяю <em>аналитическое мышление</em>, прикладной искусственный интеллект и внимание к деталям — чтобы превращать сложные задачи в понятные решения.</>
+              : <>Bringing together <em>analytical thinking</em>, applied AI, and attention to detail to turn complex challenges into clear solutions.</>}</p>
+            <span className="intro-mark">Y.</span>
+          </div>
+        </section>
 
         <section className="work section-pad" id="work">
           <div className="container">
-            <div className="work-intro reveal"><div><span className="eyebrow">{t.projectsLabel}</span><h2 className="section-heading">{t.projectsTitle}</h2></div><p className="section-lead">{t.projectsLead}</p></div>
-            {t.projects.map((project, i) => (
-              <article className={`project ${i % 2 === 0 ? 'light' : ''} reveal`} key={project.title}>
-                <div className="project-inner">
+            <div className="section-top reveal">
+              <span className="eyebrow">{t.projectsLabel}</span>
+              <span className="section-count">01 / {language === 'ru' ? 'ПРАКТИКА' : 'SELECTED WORK'}</span>
+            </div>
+            <div className="work-heading reveal">
+              <h2>{t.projectsTitle}</h2>
+              <p>{t.projectsLead}</p>
+            </div>
+            <div className="project-list">
+              {t.projects.map((project, index) => (
+                <article className={\`project-row reveal \${index % 2 ? 'reverse' : ''}\`} key={project.title}>
+                  <div className="project-visual">
+                    <div className={\`project-photo project-photo-\${index + 1}\`} style={{ backgroundImage: \`url("\${projectImages[index]}")\` }}>
+                      <span className="photo-number">0{index + 1}</span>
+                      <span className="photo-category">{project.number.split('/')[1]?.trim()}</span>
+                    </div>
+                  </div>
                   <div className="project-copy">
-                    <div className="project-index">{project.number}</div>
+                    <span className="eyebrow">{project.number}</span>
                     <h3>{project.title}</h3>
                     <p className="project-description">{project.description}</p>
                     <p className="project-details">{project.details}</p>
                     <div className="tag-list">{project.tags.map((tag) => <span className="tag" key={tag}>{tag}</span>)}</div>
                     <div className="project-actions">
-                      <a className="project-link" href={project.repo} target="_blank" rel="noopener noreferrer">{language === 'ru' ? 'Исходный код на GitHub' : 'Source code on GitHub'} <Arrow /></a>
-                      {project.demo && <a className="project-link secondary-link" href={project.demo} target="_blank" rel="noopener noreferrer">{language === 'ru' ? 'Демонстрация' : 'Demo'} <Arrow /></a>}
+                      <a className="text-link" href={project.repo} target="_blank" rel="noopener noreferrer">{language === 'ru' ? 'Репозиторий' : 'Repository'} <Arrow /></a>
+                      {project.demo && <a className="text-link muted-link" href={project.demo} target="_blank" rel="noopener noreferrer">{language === 'ru' ? 'Демонстрация' : 'Demo'} <Arrow /></a>}
                     </div>
                   </div>
-                  <div className="project-visual"><div className="project-art-card"><span>0{i + 1}</span><strong>{['RAG', 'WORKFLOW', 'ANALYTICS'][i]}</strong><small>{project.tags.slice(0, 3).join(' · ')}</small><div className="art-lines"><i /><i /><i /><i /></div></div></div>
-                </div>
-              </article>
-            ))}
+                </article>
+              ))}
+            </div>
           </div>
         </section>
 
         <section className="capabilities section-pad" id="capabilities">
           <div className="container">
-            <div className="reveal"><span className="eyebrow">{t.skillsLabel}</span><h2 className="section-heading">{t.skillsTitle}</h2></div>
+            <div className="section-top reveal"><span className="eyebrow">{t.skillsLabel}</span><span className="section-count">02 / {language === 'ru' ? 'ИНСТРУМЕНТАРИЙ' : 'CAPABILITIES'}</span></div>
+            <div className="capabilities-heading reveal"><h2>{t.skillsTitle}</h2><p>{language === 'ru' ? 'Инструменты — это средства решения задачи. Важнее понимать, когда и зачем их применять.' : 'Tools are a means to solve a problem. Knowing when and why to use them matters more.'}</p></div>
             <div className="skills-layout reveal delay-1">
-              <div className="skills-column"><h3>{t.hard}</h3><ul>{t.hardSkills.map((skill) => <li key={skill}>{skill}</li>)}</ul></div>
-              <div className="skills-column soft-column"><h3>{t.soft}</h3><ul>{t.softSkills.map((skill) => <li key={skill}>{skill}</li>)}</ul></div>
+              <div className="skills-column"><div className="column-heading"><span>01</span><h3>{t.hard}</h3></div><ul>{t.hardSkills.map((skill) => <li key={skill}>{skill}<span>↗</span></li>)}</ul></div>
+              <div className="skills-column soft-column"><div className="column-heading"><span>02</span><h3>{t.soft}</h3></div><ul>{t.softSkills.map((skill) => <li key={skill}>{skill}<span>↗</span></li>)}</ul></div>
             </div>
           </div>
         </section>
 
         <section className="about section-pad" id="about">
-          <div className="container about-grid"><div className="reveal"><span className="eyebrow">{t.aboutLabel}</span><h2 className="about-statement">{t.aboutTitle}</h2></div><div className="about-copy reveal delay-1">{t.about.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div></div>
+          <div className="container about-layout">
+            <div className="about-title reveal"><span className="eyebrow">{t.aboutLabel}</span><h2>{t.aboutTitle}</h2></div>
+            <div className="about-body reveal delay-1">{t.about.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}<div className="about-signature">Yaroslav Prokoshkin <span>— 2026</span></div></div>
+          </div>
         </section>
 
         <section className="hackathons section-pad" id="hackathons">
           <div className="container">
-            <div className="reveal"><span className="eyebrow">{t.hackLabel}</span><h2 className="section-heading">{t.hackTitle}</h2><p className="section-lead">{t.hackLead}</p></div>
-            <div className="hack-list reveal delay-1">{t.hackathons.map((item) => <article className="hack-card" key={item.name}><div className="hack-year">{item.year}</div><div className="hack-content"><h3>{item.name}</h3><p className="hack-track">{item.track}</p><p>{item.role}</p></div></article>)}</div>
+            <div className="section-top reveal"><span className="eyebrow">{t.hackLabel}</span><span className="section-count">03 / {language === 'ru' ? 'СОВМЕСТНАЯ РАБОТА' : 'COLLABORATION'}</span></div>
+            <div className="hack-heading reveal"><h2>{t.hackTitle}</h2><p>{t.hackLead}</p></div>
+            <div className="hack-list reveal delay-1">{t.hackathons.map((item, index) => <article className="hack-card" key={item.name}><div className="hack-index"><span>0{index + 1}</span><strong>{item.year}</strong></div><div className="hack-content"><h3>{item.name}</h3><p className="hack-track">{item.track}</p><p>{item.role}</p></div><span className="hack-arrow">↗</span></article>)}</div>
           </div>
         </section>
 
         <section className="education section-pad" id="education">
-          <div className="container"><div className="reveal"><span className="eyebrow">{t.eduLabel}</span><h2 className="section-heading">{t.eduTitle}</h2></div>
-            <div className="education-card reveal delay-1"><div className="education-label">{t.university}</div><div><div className="education-main"><h3>{t.master}</h3><p>{t.masterDesc}</p></div><div className="education-main"><h3>{t.bachelor}</h3><p>{t.bachelorDesc}</p></div></div></div>
+          <div className="container education-layout">
+            <div className="education-heading reveal"><span className="eyebrow">{t.eduLabel}</span><h2>{t.eduTitle}</h2><p>{t.university}</p></div>
+            <div className="education-content reveal delay-1"><article><span>2026 — PRESENT</span><h3>{t.master}</h3><p>{t.masterDesc}</p></article><article><span>2022 — 2026</span><h3>{t.bachelor}</h3><p>{t.bachelorDesc}</p></article></div>
           </div>
         </section>
 
         <section className="contact section-pad" id="contact">
           <div className="container">
-            <div className="contact-top reveal"><div><span className="eyebrow">{t.contactLabel}</span><h2 className="section-heading">{t.contactTitle}</h2></div><p className="section-lead">{t.contactLead}</p></div>
-            <div className="contact-grid reveal delay-1">
-              <a className="contact-card" href="mailto:yaroslav.prokoshkin2134@gmail.com"><span className="contact-type">Email</span><strong>yaroslav.prokoshkin2134@gmail.com <Arrow /></strong><small>{t.emailHint}</small></a>
-              <a className="contact-card" href="https://t.me/j99j99jj9" target="_blank" rel="noopener noreferrer"><span className="contact-type">Telegram</span><strong>@j99j99jj9 <Arrow /></strong><small>{t.telegramHint}</small></a>
-              <a className="contact-card" href="https://github.com/sk8teJ" target="_blank" rel="noopener noreferrer"><span className="contact-type">GitHub</span><strong>github.com/sk8teJ <Arrow /></strong><small>{t.githubHint}</small></a>
+            <div className="section-top reveal"><span className="eyebrow">{t.contactLabel}</span><span className="section-count">04 / CONTACT</span></div>
+            <div className="contact-layout reveal"><h2>{t.contactTitle}</h2><div><p>{t.contactLead}</p><a className="contact-email" href="mailto:yaroslav.prokoshkin2134@gmail.com">yaroslav.prokoshkin2134@gmail.com <Arrow /></a></div></div>
+            <div className="contact-links reveal delay-1">
+              <a href="https://t.me/j99j99jj9" target="_blank" rel="noopener noreferrer"><span>TELEGRAM</span><strong>@j99j99jj9</strong><Arrow /></a>
+              <a href="https://github.com/sk8teJ" target="_blank" rel="noopener noreferrer"><span>GITHUB</span><strong>github.com/sk8teJ</strong><Arrow /></a>
+              <a href="mailto:yaroslav.prokoshkin2134@gmail.com"><span>EMAIL</span><strong>{language === 'ru' ? 'Написать письмо' : 'Send an email'}</strong><Arrow /></a>
             </div>
-            <footer className="footer"><span>© {new Date().getFullYear()} Yaroslav. {language === 'ru' ? 'Все права защищены.' : 'All rights reserved.'}</span><a href="#top">{t.top}</a><span>{t.footer}</span></footer>
+            <footer className="footer"><span>© {new Date().getFullYear()} Yaroslav Prokoshkin</span><a href="#top">{t.top} ↑</a><span>{t.footer}</span></footer>
           </div>
         </section>
       </main>
