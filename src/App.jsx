@@ -168,7 +168,7 @@ function App() {
           <div className="container hero-layout">
             <div className="hero-copy">
               <div className="eyebrow reveal">{language === 'ru' ? 'НЕЗАВИСИМАЯ ПРАКТИКА · AI И ТЕХНОЛОГИИ' : 'INDEPENDENT PRACTICE · AI & TECHNOLOGY'}</div>
-              <h1 className="reveal delay-1">{language === 'ru' ? <>Ярослав<br /><em>Прокошкин.</em></> : <>Yaroslav<br /><em>Prokoshkin.</em></>}</h1>
+              <h1 className="reveal delay-1">Yaroslav<br /><em>Prokoshkin.</em></h1>
               <p className="hero-role reveal delay-2">{t.role} <span>/</span> {t.roleAccent}</p>
               <p className="hero-description reveal delay-2">{t.intro}</p>
               <div className="hero-actions reveal delay-3">
