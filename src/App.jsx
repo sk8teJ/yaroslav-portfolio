@@ -148,9 +148,9 @@ function App() {
       <header className="site-header">
         <nav className="nav container" aria-label="Main navigation">
           <a className="brand" href="#top" onClick={closeMenu}>YAROSLAV<span>.</span></a>
-          <div className={\`nav-links \${menuOpen ? 'open' : ''}\`}>
+          <div className={`nav-links ${menuOpen ? 'open' : ''}`}>
             {['work', 'capabilities', 'about', 'hackathons', 'contact'].map((id, i) => (
-              <a key={id} href={\`#\${id}\`} onClick={closeMenu}>{t.nav[i]}</a>
+              <a key={id} href={`#${id}`} onClick={closeMenu}>{t.nav[i]}</a>
             ))}
           </div>
           <div className="nav-actions">
@@ -208,9 +208,9 @@ function App() {
             </div>
             <div className="project-list">
               {t.projects.map((project, index) => (
-                <article className={\`project-row reveal \${index % 2 ? 'reverse' : ''}\`} key={project.title}>
+                <article className={`project-row reveal ${index % 2 ? 'reverse' : ''}`} key={project.title}>
                   <div className="project-visual">
-                    <div className={\`project-photo project-photo-\${index + 1}\`} style={{ backgroundImage: \`url("\${projectImages[index]}")\` }}>
+                    <div className={`project-photo project-photo-${index + 1}`} style={{ backgroundImage: `url("${projectImages[index]}")` }}>
                       <span className="photo-number">0{index + 1}</span>
                       <span className="photo-category">{project.number.split('/')[1]?.trim()}</span>
                     </div>
