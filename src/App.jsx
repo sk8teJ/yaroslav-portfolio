@@ -45,7 +45,6 @@ const content = {
     bachelorDesc: 'Программа «Аналитические методы и информационные технологии поддержки принятия решений в экономике и бизнесе» · 2026 · диплом получен',
     contactLabel: 'На связи / 08',
     contactTitle: 'Давайте обсудим задачу.',
-    contactLead: 'Открыт к стажировкам, junior-позициям и профессиональному общению.',
     emailHint: 'Написать на почту',
     telegramHint: 'Открыть Telegram',
     githubHint: 'Код, проекты и эксперименты',
@@ -96,7 +95,6 @@ const content = {
     bachelorDesc: 'Analytical methods and information technologies for decision support in economics and business · 2026 · graduated',
     contactLabel: 'Get in touch / 08',
     contactTitle: 'Let’s talk about the problem.',
-    contactLead: 'Open to internships, junior roles, and professional conversations.',
     emailHint: 'Send me an email',
     telegramHint: 'Open Telegram',
     githubHint: 'Code, projects, and experiments',
@@ -271,7 +269,7 @@ function App() {
         <section className="contact section-pad" id="contact">
           <div className="container">
             <div className="section-top reveal"><span className="eyebrow">{t.contactLabel}</span><span className="section-count">04 / CONTACT</span></div>
-            <div className="contact-layout reveal"><h2>{t.contactTitle}</h2><div><p>{t.contactLead}</p><a className="contact-email" href="mailto:yaroslav.prokoshkin2134@gmail.com">yaroslav.prokoshkin2134@gmail.com <Arrow /></a></div></div>
+            <div className="contact-layout reveal"><h2>{t.contactTitle}</h2><div><a className="contact-email" href="mailto:yaroslav.prokoshkin2134@gmail.com">yaroslav.prokoshkin2134@gmail.com <Arrow /></a></div></div>
             <div className="contact-links reveal delay-1">
               <a href="https://t.me/j99j99jj9" target="_blank" rel="noopener noreferrer"><span>TELEGRAM</span><strong>@j99j99jj9</strong><Arrow /></a>
               <a href="https://github.com/sk8teJ" target="_blank" rel="noopener noreferrer"><span>GITHUB</span><strong>github.com/sk8teJ</strong><Arrow /></a>
