@@ -1,24 +1,22 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="320" viewBox="0 0 1200 320" role="img" aria-labelledby="t d">
-<title id="t">Yaroslav — System Analysis</title>
-<desc id="d">Dark editorial banner with connected nodes representing systems, processes and data flows.</desc>
+<title id="t">Ярослав — системный аналитик</title>
+<desc id="d">Чёрно-белый минималистичный баннер с графом связей, отражающим системы, процессы и потоки данных.</desc>
 <defs>
-  <linearGradient id="b" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#080B14"/><stop offset="1" stop-color="#151A2B"/></linearGradient>
-  <linearGradient id="a"><stop stop-color="#A78BFA"/><stop offset="1" stop-color="#67E8F9"/></linearGradient>
-  <radialGradient id="g"><stop stop-color="#8B5CF6" stop-opacity=".35"/><stop offset="1" stop-color="#8B5CF6" stop-opacity="0"/></radialGradient>
+  <linearGradient id="b" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#050505"/><stop offset="1" stop-color="#202020"/></linearGradient>
+  <linearGradient id="a"><stop stop-color="#FFFFFF"/><stop offset="1" stop-color="#777777"/></linearGradient>
 </defs>
 <rect width="1200" height="320" rx="28" fill="url(#b)"/>
-<circle cx="1010" cy="100" r="250" fill="url(#g)"/>
-<g fill="none" stroke="url(#a)" stroke-opacity=".52" stroke-width="2">
+<g fill="none" stroke="url(#a)" stroke-opacity=".58" stroke-width="2">
   <path d="M770 82H900L1000 145H1110M900 145H1040V245H1140M900 145 820 245M770 82 820 245M1000 145 1110 82"/>
   <path d="M820 245H1040" stroke-dasharray="5 8" stroke-opacity=".35"/>
 </g>
-<g fill="#111827" stroke="url(#a)" stroke-width="3">
+<g fill="#111111" stroke="url(#a)" stroke-width="3">
   <circle cx="770" cy="82" r="9"/><circle cx="900" cy="145" r="12"/><circle cx="1000" cy="145" r="9"/>
   <circle cx="1110" cy="82" r="9"/><circle cx="1040" cy="245" r="10"/><circle cx="1140" cy="245" r="8"/><circle cx="820" cy="245" r="8"/>
 </g>
-<text x="76" y="84" fill="#A5B4FC" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="700" letter-spacing="5">REQUIREMENTS · PROCESSES · SYSTEMS</text>
-<text x="72" y="158" fill="#F8FAFC" font-family="Arial,Helvetica,sans-serif" font-size="58" font-weight="700">Yaroslav</text>
-<text x="76" y="205" fill="#CBD5E1" font-family="Arial,Helvetica,sans-serif" font-size="25">System Analyst</text>
+<text x="76" y="84" fill="#BDBDBD" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="700" letter-spacing="4">СИСТЕМЫ · ТРЕБОВАНИЯ · ПРОЦЕССЫ</text>
+<text x="72" y="158" fill="#FFFFFF" font-family="Arial,Helvetica,sans-serif" font-size="58" font-weight="700">Ярослав</text>
+<text x="76" y="205" fill="#D0D0D0" font-family="Arial,Helvetica,sans-serif" font-size="25">Системный аналитик</text>
 <rect x="76" y="244" width="250" height="3" rx="2" fill="url(#a)"/>
-<text x="76" y="278" fill="#94A3B8" font-family="Arial,Helvetica,sans-serif" font-size="15" letter-spacing="2">FROM BUSINESS NEEDS TO SYSTEM SOLUTIONS</text>
+<text x="76" y="278" fill="#A0A0A0" font-family="Arial,Helvetica,sans-serif" font-size="15" letter-spacing="1">ОТ ЗАДАЧ БИЗНЕСА К СИСТЕМНЫМ РЕШЕНИЯМ</text>
 </svg>
